@@ -86,7 +86,7 @@ export default function HeroSection() {
               outlineSize={FloatingButtonOutlineSize.large}
               animationDelay={FloatingButtonAnimationDelay.long}
               link="mailto:sam@sjstanford.dev"
-              popAnimationDelay={1300}
+              popAnimationDelay={1100}
             />
           </div>
         </Content>
