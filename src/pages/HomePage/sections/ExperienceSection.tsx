@@ -159,10 +159,10 @@ export default function ExperienceSection() {
           multiple teams.
         </p>
         <p>
-          <strong>Key Technologies</strong>: JavaScript, C++, MATLAB, Go
+          <strong>Key Technologies</strong>: Go, JavaScript, C++, MATLAB
         </p>
         <p>
-          <strong>Key Skills</strong>: SCRUM, Non-Verbal Communication
+          <strong>Key Skills</strong>: SCRUM, Remote Development, System Design
         </p>
       </ExperienceCard>
     </ScrollAnimation>
@@ -204,7 +204,7 @@ export default function ExperienceSection() {
         </p>
         <p>
           <strong>Key Skills</strong>: Site-Reliability Engineering, Service
-          Monitoring, Firefighting, Prioritisation
+          Monitoring, Firefighting, Agile Development
         </p>
       </ExperienceCard>
     </ScrollAnimation>
