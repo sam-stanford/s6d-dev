@@ -221,10 +221,10 @@ export default function ExperienceSection() {
           />
           <Row align="middle" justify="space-between">
             <Col xs={24} sm={24} md={24} lg={11} xl={11}>
+              {bloombergCard}
+              {mathworksCard}
               {ecoeatsCard}
               {bluestoneCard}
-              {mathworksCard}
-              {bloombergCard}
             </Col>
             <Col xs={0} sm={0} md={0} lg={11} xl={11}>
               <ScrollAnimation
