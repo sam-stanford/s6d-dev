@@ -4,6 +4,7 @@ import ukMap from "../../../assets/images/uk_map.svg";
 import { Col, Row } from "antd";
 
 import ecoeatsLogoSquare from "../../../assets/images/ecoeats_square_logo.svg";
+import bloombergLogoSquare from "../../../assets/images/bloomberg_logo_square.jpeg";
 import b98LogoSquare from "../../../assets/images/b98.svg";
 import mathworksLogoSquare from "../../../assets/images/mathworks_square_logo.png";
 import SectionHeader from "../../../components/SectionHeader/SectionHeader";
@@ -17,6 +18,7 @@ import { AnimationType } from "../../../components/ScrollAnimation/AnimationType
 const MATHWORKS_BLUE = "#005594";
 const ECOEATS_GREEN = "#31B668";
 const BLUESTONE_RED = "#CF0000";
+const BLOOMBERG_ORANGE = "#FF9933";
 
 const UNFOCUSED_SATURATION = 0.6;
 
@@ -33,6 +35,10 @@ export default function ExperienceSection() {
   const [mathworksHovered, setMathworksHovered] = useState(false);
   const [mathworksHighlighted, setMathworksHighlighted] = useState(false);
 
+  const [bloombergFocused, setBloombergFocused] = useState(false);
+  const [bloombergHovered, setBloombergHovered] = useState(false);
+  const [bloombergHighlighted, setBloombergHighlighted] = useState(false);
+
   useEffect(() => {
     setEcoeatsHighlighted(ecoeatsFocused || ecoeatsHovered);
   }, [ecoeatsFocused, ecoeatsHovered]);
@@ -44,6 +50,10 @@ export default function ExperienceSection() {
   useEffect(() => {
     setMathworksHighlighted(mathworksFocused || mathworksHovered);
   }, [mathworksFocused, mathworksHovered]);
+
+  useEffect(() => {
+    setBloombergHighlighted(bloombergFocused || bloombergHovered);
+  }, [bloombergFocused, bloombergHovered]);
 
   const ecoeatsCard = (
     <ScrollAnimation animation={AnimationType.fadeRight}>
@@ -158,6 +168,48 @@ export default function ExperienceSection() {
     </ScrollAnimation>
   );
 
+  const bloombergCard = (
+    <ScrollAnimation animation={AnimationType.fadeRight}>
+      <ExperienceCard
+        logoSrc={bloombergLogoSquare}
+        logoAlt="Bloomberg L.P. logo"
+        title="Bloomberg L.P."
+        subtitle="May 2021 - Sept 2021"
+        isHighlighted={bloombergHighlighted}
+        onFocus={() => {
+          setBloombergFocused(true);
+        }}
+        onBlur={() => {
+          setBloombergFocused(false);
+        }}
+        onMouseEnter={() => {
+          setBloombergHovered(true);
+        }}
+        onMouseLeave={() => {
+          setBloombergHovered(false);
+        }}
+      >
+        <p>
+          My current role as <strong>reliability engineer</strong>, with a focus
+          on developer experience and software supply-chain security, has
+          provided me with{" "}
+          <strong>
+            experience hosting critical services with three nines uptime
+          </strong>
+          , including taking on-call duties, developing for new and legacy
+          systems, and leading small teams to success.
+        </p>
+        <p>
+          <strong>Key Technologies</strong>: Python, Shell, TypeScript, SQL
+        </p>
+        <p>
+          <strong>Key Skills</strong>: Site-Reliability Engineering, Service
+          Monitoring, Firefighting, Prioritisation
+        </p>
+      </ExperienceCard>
+    </ScrollAnimation>
+  );
+
   return (
     <>
       <Section>
@@ -171,6 +223,7 @@ export default function ExperienceSection() {
               {ecoeatsCard}
               {bluestoneCard}
               {mathworksCard}
+              {bloombergCard}
             </Col>
             <Col xs={0} sm={0} md={0} lg={11} xl={11}>
               <ScrollAnimation
@@ -224,8 +277,8 @@ export default function ExperienceSection() {
                     }}
                   />
                   <PulsingButton
-                    top="78%"
-                    left="70%"
+                    top="76%"
+                    left="72%"
                     color={MATHWORKS_BLUE}
                     saturation={mathworksHighlighted ? 1 : UNFOCUSED_SATURATION}
                     isHighlighted={mathworksHighlighted}
@@ -240,6 +293,25 @@ export default function ExperienceSection() {
                     }}
                     onMouseLeave={() => {
                       setMathworksHovered(false);
+                    }}
+                  />
+                  <PulsingButton
+                    top="86%"
+                    left="68%"
+                    color={BLOOMBERG_ORANGE}
+                    saturation={bloombergHighlighted ? 1 : UNFOCUSED_SATURATION}
+                    isHighlighted={bloombergHighlighted}
+                    onFocus={() => {
+                      setBloombergFocused(true);
+                    }}
+                    onBlur={() => {
+                      setBloombergFocused(false);
+                    }}
+                    onMouseEnter={() => {
+                      setBloombergHighlighted(true);
+                    }}
+                    onMouseLeave={() => {
+                      setBloombergHighlighted(false);
                     }}
                   />
                   <img
