@@ -6,7 +6,7 @@ import Section, {
 } from "../../../components/Section/Section";
 import orangeArrow from "../../../assets/images/icons/arrow_right_orange.svg";
 import ChangingWord from "../../../components/ChaningWord";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
 
 const BLACK = "#262626";
 
@@ -24,7 +24,7 @@ const ADJECTIVES = [
   "dynamic",
   "fabulous",
   "fantastic",
-  "fearful",
+  "fearless",
   "friendly",
   "geeky",
   "happy",
