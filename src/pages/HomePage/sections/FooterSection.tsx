@@ -80,14 +80,6 @@ export default function FooterSection() {
     }
   }, []);
 
-  const addWindowScrollListener = useCallback(() => {
-    window.addEventListener("scroll", updatePosition);
-  }, [updatePosition]);
-
-  // useEffect(() => {
-  //   addWindowScrollListener();
-  // }, [addWindowScrollListener]);
-
   return (
     <>
       <Section
