@@ -1,8 +1,4 @@
-import { List } from "antd";
-import Title from "antd/lib/typography/Title";
 import Content from "../../../components/Content/Content";
-import { AnimationType } from "../../../components/ScrollAnimation/AnimationType";
-import ScrollAnimation from "../../../components/ScrollAnimation/ScrollAnimation";
 import Section from "../../../components/Section/Section";
 import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 import SkillsList from "../../../components/SkillsList/SkillsList";
