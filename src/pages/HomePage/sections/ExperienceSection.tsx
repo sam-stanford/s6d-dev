@@ -1,7 +1,7 @@
 import Content from "../../../components/Content/Content";
 import Section from "../../../components/Section/Section";
 import ukMap from "../../../assets/images/uk_map.svg";
-import { Col, Row } from "antd";
+import { Col, Row, Space } from "antd";
 
 import ecoeatsLogoSquare from "../../../assets/images/ecoeats_square_logo.svg";
 import bloombergLogoSquare from "../../../assets/images/bloomberg_logo_square.jpeg";
@@ -211,6 +211,106 @@ export default function ExperienceSection() {
     </ScrollAnimation>
   );
 
+  const map = (
+    <ScrollAnimation animation={AnimationType.fadeLeft}>
+      <div
+        style={{
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <PulsingButton
+          top="28%"
+          left="60%"
+          color={ECOEATS_GREEN}
+          saturation={ecoeatsHighlighted ? 1 : UNFOCUSED_SATURATION}
+          isHighlighted={ecoeatsHighlighted}
+          onFocus={() => {
+            setEcoeatsFocused(true);
+          }}
+          onBlur={() => {
+            setEcoeatsFocused(false);
+          }}
+          onMouseEnter={() => {
+            setEcoeatsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setEcoeatsHovered(false);
+          }}
+        />
+        <PulsingButton
+          top="56%"
+          left="65%"
+          color={BLUESTONE_RED}
+          saturation={bluestoneHighlighted ? 1 : UNFOCUSED_SATURATION}
+          isHighlighted={bluestoneHighlighted}
+          onFocus={() => {
+            setBluestoneFocused(true);
+          }}
+          onBlur={() => {
+            setBluestoneFocused(false);
+          }}
+          onMouseEnter={() => {
+            setBluestoneHovered(true);
+          }}
+          onMouseLeave={() => {
+            setBluestoneHovered(false);
+          }}
+        />
+        <PulsingButton
+          top="76%"
+          left="72%"
+          color={MATHWORKS_BLUE}
+          saturation={mathworksHighlighted ? 1 : UNFOCUSED_SATURATION}
+          isHighlighted={mathworksHighlighted}
+          onFocus={() => {
+            setMathworksFocused(true);
+          }}
+          onBlur={() => {
+            setMathworksFocused(false);
+          }}
+          onMouseEnter={() => {
+            setMathworksHovered(true);
+          }}
+          onMouseLeave={() => {
+            setMathworksHovered(false);
+          }}
+        />
+        <PulsingButton
+          top="86%"
+          left="68%"
+          color={BLOOMBERG_ORANGE}
+          saturation={bloombergHighlighted ? 1 : UNFOCUSED_SATURATION}
+          isHighlighted={bloombergHighlighted}
+          onFocus={() => {
+            setBloombergFocused(true);
+          }}
+          onBlur={() => {
+            setBloombergFocused(false);
+          }}
+          onMouseEnter={() => {
+            setBloombergHighlighted(true);
+          }}
+          onMouseLeave={() => {
+            setBloombergHighlighted(false);
+          }}
+        />
+        <img
+          src={ukMap}
+          alt="outline of UK map"
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            height: "auto",
+            pointerEvents: "none",
+          }}
+        />
+      </div>
+    </ScrollAnimation>
+  );
+
   return (
     <>
       <Section>
@@ -220,113 +320,50 @@ export default function ExperienceSection() {
             className="experience-section-header"
           />
           <Row align="middle" justify="space-between">
-            <Col xs={24} sm={24} md={24} lg={11} xl={11}>
-              {bloombergCard}
-              {mathworksCard}
-              {ecoeatsCard}
-              {bluestoneCard}
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={11}
+              xl={11}
+              style={{ justifyContent: "space-between" }}
+            >
+              <Space direction="vertical">
+                {bloombergCard}
+                {mathworksCard}
+              </Space>
             </Col>
-            <Col xs={0} sm={0} md={0} lg={11} xl={11}>
-              <ScrollAnimation
-                animation={AnimationType.fadeLeft}
-                anchorElementClass="ecoeats-experience-card"
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <PulsingButton
-                    top="28%"
-                    left="60%"
-                    color={ECOEATS_GREEN}
-                    saturation={ecoeatsHighlighted ? 1 : UNFOCUSED_SATURATION}
-                    isHighlighted={ecoeatsHighlighted}
-                    onFocus={() => {
-                      setEcoeatsFocused(true);
-                    }}
-                    onBlur={() => {
-                      setEcoeatsFocused(false);
-                    }}
-                    onMouseEnter={() => {
-                      setEcoeatsHovered(true);
-                    }}
-                    onMouseLeave={() => {
-                      setEcoeatsHovered(false);
-                    }}
-                  />
-                  <PulsingButton
-                    top="56%"
-                    left="65%"
-                    color={BLUESTONE_RED}
-                    saturation={bluestoneHighlighted ? 1 : UNFOCUSED_SATURATION}
-                    isHighlighted={bluestoneHighlighted}
-                    onFocus={() => {
-                      setBluestoneFocused(true);
-                    }}
-                    onBlur={() => {
-                      setBluestoneFocused(false);
-                    }}
-                    onMouseEnter={() => {
-                      setBluestoneHovered(true);
-                    }}
-                    onMouseLeave={() => {
-                      setBluestoneHovered(false);
-                    }}
-                  />
-                  <PulsingButton
-                    top="76%"
-                    left="72%"
-                    color={MATHWORKS_BLUE}
-                    saturation={mathworksHighlighted ? 1 : UNFOCUSED_SATURATION}
-                    isHighlighted={mathworksHighlighted}
-                    onFocus={() => {
-                      setMathworksFocused(true);
-                    }}
-                    onBlur={() => {
-                      setMathworksFocused(false);
-                    }}
-                    onMouseEnter={() => {
-                      setMathworksHovered(true);
-                    }}
-                    onMouseLeave={() => {
-                      setMathworksHovered(false);
-                    }}
-                  />
-                  <PulsingButton
-                    top="86%"
-                    left="68%"
-                    color={BLOOMBERG_ORANGE}
-                    saturation={bloombergHighlighted ? 1 : UNFOCUSED_SATURATION}
-                    isHighlighted={bloombergHighlighted}
-                    onFocus={() => {
-                      setBloombergFocused(true);
-                    }}
-                    onBlur={() => {
-                      setBloombergFocused(false);
-                    }}
-                    onMouseEnter={() => {
-                      setBloombergHighlighted(true);
-                    }}
-                    onMouseLeave={() => {
-                      setBloombergHighlighted(false);
-                    }}
-                  />
-                  <img
-                    src={ukMap}
-                    alt="outline of UK map"
-                    style={{
-                      width: "100%",
-                      maxWidth: "600px",
-                      height: "auto",
-                      pointerEvents: "none",
-                    }}
-                  />
-                </div>
-              </ScrollAnimation>
+            <Col
+              xs={0}
+              sm={0}
+              md={0}
+              lg={11}
+              xl={11}
+              style={{ justifyContent: "space-between" }}
+            >
+              {map}
+            </Col>
+          </Row>
+          <Row align="middle" justify="space-between">
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={11}
+              xl={11}
+              style={{ justifyContent: "space-between" }}
+            >
+              {ecoeatsCard}
+            </Col>
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={11}
+              xl={11}
+              style={{ justifyContent: "space-between" }}
+            >
+              {bluestoneCard}
             </Col>
           </Row>
         </Content>
