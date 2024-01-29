@@ -82,7 +82,7 @@ export default function ExperienceSection() {
           <strong>eco-friendly food-delivery startup</strong> allowed me to hone
           my skills by developing features to solve real-world problems using
           modern technologies, helping grow the daily user base from under 50 to
-          nearly 1,000 users.
+          nearly 1,000 daily active users.
         </p>
         <p>
           <strong>Key Technologies</strong>: TypeScript, NestJS, PostgreSQL, Git
