@@ -8,18 +8,17 @@ import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 import SkillsList from "../../../components/SkillsList/SkillsList";
 
 const skills: string[] = [
-  "Java",
+  "Python",
   "TypeScript",
   "JavaScript",
+  "Java",
   "HTML",
   "CSS, Sass",
-  "Python",
   "PHP",
   "Go",
   "C",
   "C++",
   "Git",
-  "Perforce",
   "SQL",
   "GraphQL",
   "React",
@@ -28,10 +27,11 @@ const skills: string[] = [
   "Node.js",
   "WordPress",
   "Linux",
+  "Shell",
+  "Perl",
+  "Flask",
   "Affinity",
   "Photoshop",
-  "MS Office",
-  "G Workspace",
 ];
 
 export default function SkillsSection() {
