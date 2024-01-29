@@ -35,6 +35,7 @@ const ADJECTIVES = [
   "motivated",
   "nerdy",
   "passionate",
+  "quick",
   "reliable",
   "resourceful",
   "skilled",
