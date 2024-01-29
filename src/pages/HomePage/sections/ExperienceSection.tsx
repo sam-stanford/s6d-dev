@@ -20,7 +20,7 @@ const ECOEATS_GREEN = "#31B668";
 const BLUESTONE_RED = "#CF0000";
 const BLOOMBERG_ORANGE = "#FF9933";
 
-const UNFOCUSED_SATURATION = 0.6;
+const UNFOCUSED_SATURATION = 0.3;
 
 export default function ExperienceSection() {
   const [ecoeatsFocused, setEcoeatsFocused] = useState(false);
