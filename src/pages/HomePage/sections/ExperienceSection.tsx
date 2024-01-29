@@ -125,7 +125,8 @@ export default function ExperienceSection() {
           <strong>Key Technologies</strong>: HTML, CSS, JavaScript, Adobe CS
         </p>
         <p>
-          <strong>Key Skills</strong>: Teamwork, UI &amp; UX Design
+          <strong>Key Skills</strong>: Teamwork, UI &amp; UX Design, Client
+          Interaction
         </p>
       </ExperienceCard>
     </ScrollAnimation>
