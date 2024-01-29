@@ -1,0 +1,57 @@
+@import "../../utils/Breakpoints.scss";
+
+.pulsing-dot {
+  $diameter: 46px;
+  height: $diameter;
+  min-height: $diameter;
+  width: $diameter;
+  min-width: $diameter;
+  position: absolute;
+  background-color: transparent;
+  transition: 0.1s ease-in-out;
+
+  & > * {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    border: none;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    filter: saturate(0.6);
+  }
+
+  &__pulse {
+    animation: pulse 2s ease infinite;
+  }
+  &__dot {
+    transition: 0.2s ease-in-out;
+    transform: scale(1);
+  }
+
+  &--active {
+    filter: none;
+
+    .pulsing-dot__dot {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  30% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

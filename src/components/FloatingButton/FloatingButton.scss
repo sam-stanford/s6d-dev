@@ -1,0 +1,153 @@
+@import "../../utils/Breakpoints.scss";
+@import "../../utils/Colors.scss";
+
+$button-hover-anim-duration: 0.2s;
+$button-hover-anim-scale: 1.2;
+
+$move-up-down-anim-duration: 5s;
+$move-up-down-anim-distance: 1.8rem;
+$move-up-down-anim-short-delay: -2s;
+$move-up-down-anim-long-delay: -4s;
+
+$button-diameter: 80px;
+$container-diameter: 120px;
+
+$outline-diameter: 120px;
+$outline-large-scale: 4;
+$outline-medium-scale: 3;
+$outline-small-scale: 2;
+
+.floating-button {
+  z-index: 10;
+
+  &--left {
+    top: -3em;
+    left: 0;
+  }
+
+  &--middle {
+    top: -28em;
+    left: 4em;
+  }
+
+  &--right {
+    top: 0em;
+    right: 0em;
+
+    @media (min-width: 1000px) {
+      right: 10em;
+    }
+
+    @media (min-width: 900px) {
+      right: 5em;
+    }
+
+    @media (min-width: 800px) {
+      top: -13em;
+    }
+  }
+
+  &__button {
+    position: "initial";
+    width: $button-diameter;
+    height: $button-diameter;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $button-hover-anim-duration ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      position: relative;
+    }
+
+    &--large-outline {
+      &::before {
+        height: $outline-diameter * $outline-large-scale;
+        width: $outline-diameter * $outline-large-scale;
+      }
+    }
+
+    &--medium-outline {
+      &::before {
+        height: $outline-diameter * $outline-medium-scale;
+        width: $outline-diameter * $outline-medium-scale;
+      }
+    }
+
+    &--small-outline {
+      &::before {
+        height: $outline-diameter * $outline-small-scale;
+        width: $outline-diameter * $outline-small-scale;
+      }
+    }
+
+    &::before {
+      z-index: 11;
+      @media (min-width: $breakpoint-md) {
+        background-color: transparent;
+        border: 1px solid $med-grey;
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        transition: $button-hover-anim-duration ease-in-out;
+      }
+    }
+
+    img {
+      transition: $button-hover-anim-duration ease-in-out;
+      width: 2rem;
+      height: auto;
+    }
+
+    &:hover {
+      transition: $button-hover-anim-duration ease-in-out;
+      transform: scale($button-hover-anim-scale);
+
+      &::before {
+        transition: $button-hover-anim-duration ease-in-out;
+        height: $outline-diameter;
+        width: $outline-diameter;
+      }
+
+      img {
+        transition: $button-hover-anim-duration ease-in-out;
+        transform: scale(1 / $button-hover-anim-scale);
+      }
+    }
+  }
+
+  &__container {
+    width: $container-diameter;
+    height: $container-diameter;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: $breakpoint-md) {
+      animation: move-up-down $move-up-down-anim-duration ease-in-out infinite;
+    }
+
+    &--short-animation-delay {
+      animation-delay: $move-up-down-anim-short-delay;
+    }
+
+    &--long-animation-delay {
+      animation-delay: $move-up-down-anim-long-delay;
+    }
+  }
+}
+
+@keyframes move-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY($move-up-down-anim-distance);
+  }
+}

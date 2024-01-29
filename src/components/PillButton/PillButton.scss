@@ -1,0 +1,44 @@
+.pill-button {
+  border-radius: 50px;
+  border: none;
+  padding: 12px 38px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  transition: 0.3s ease-in-out;
+
+  &__text {
+    margin: 0;
+    line-height: 1;
+    padding: 4px 0 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &__arrow {
+    width: 12px;
+    right: -20px;
+    height: auto;
+    position: absolute;
+    top: calc(50% - 2px);
+
+    transform: translate(-20px, 0);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover {
+    padding: 12px 30px;
+
+    .pill-button__text {
+      transform: translate(-10px, 0);
+    }
+
+    .pill-button__arrow {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import "../../utils/Breakpoints.scss";
+@import "../../utils/Colors.scss";
+
+.info-card {
+  background-color: $white;
+  display: flex;
+  padding: 40px;
+
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-sm) {
+    justify-content: space-between;
+    height: 300px;
+    flex-direction: row;
+    padding: 26px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    height: 460px;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 26px;
+  }
+
+  &__wrapper {
+    margin-top: 3em;
+    margin: 3em auto 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  &__image {
+    width: 100%;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-sm) {
+      margin: 0 auto;
+      width: 25%;
+    }
+    @media (min-width: $breakpoint-lg) {
+      width: 100%;
+      margin: 16px auto 20px;
+    }
+
+    &__circle {
+      border-radius: 50%;
+      background-color: $dark-grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      $diameter: 60px;
+      width: $diameter;
+      min-width: $diameter;
+      height: $diameter;
+      min-height: $diameter;
+
+      &--blue {
+        background-color: $st-andrews-blue;
+      }
+
+      &--brown {
+        background-color: $st-peters-brown;
+      }
+    }
+
+    &__icon {
+      height: 50%;
+      width: auto;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 60%;
+      justify-content: center;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &__heading {
+      margin-bottom: 0px !important;
+      text-align: center;
+    }
+  }
+}

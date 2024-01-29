@@ -1,0 +1,32 @@
+@import "../../utils/Breakpoints.scss";
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  width: calc(100% - 2em);
+
+  @media (min-width: $breakpoint-sm) {
+    width: calc(100% - 5em);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: calc(100% - 10em);
+  }
+
+  &--full-screen-height {
+    height: 100vh;
+  }
+
+  &--centre-children {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--shift-up {
+    @media (min-height: 650px) {
+      top: -5%;
+    }
+  }
+}

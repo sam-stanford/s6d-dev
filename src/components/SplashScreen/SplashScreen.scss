@@ -1,0 +1,74 @@
+@import "../../utils/Colors.scss";
+
+.splash-screen {
+  z-index: 10000;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+  background-color: $black;
+
+  pre {
+    padding: 0;
+    margin: 0;
+  }
+
+  .load {
+    margin: 0 auto;
+    min-height: 100%;
+    width: 100%;
+    background: black;
+  }
+
+  &__console {
+    font-family: monospace;
+    color: $white;
+    opacity: 0.8;
+    font-size: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-left: 20px;
+    &:after {
+      content: "_";
+      opacity: 1;
+      animation: caret 1s infinite;
+      transition: none;
+    }
+  }
+
+  &__skip-button {
+    background-color: $off-black;
+    border: none;
+    border-radius: 3px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    padding: 4px 10px;
+    color: $dark-grey;
+    transition: 0.2s ease;
+    cursor: pointer;
+    z-index: 11000;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+@keyframes caret {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
