@@ -11,8 +11,9 @@ import { useRef } from "react";
 const BLACK = "#262626";
 
 const ADJECTIVES = [
-  "agile",
   "adaptable",
+  "agile",
+  "aspirational",
   "balanced",
   "bright",
   "brilliant",
@@ -41,6 +42,7 @@ const ADJECTIVES = [
   "skilled",
   "super",
   "talented",
+  "well-versed",
 ];
 
 export default function FooterSection() {
