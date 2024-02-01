@@ -54,7 +54,7 @@ export default function Homepage() {
         >
           <HeroSection />
           <AboutSection mouse={mouse} />
-          <ProjectsSection mouse={mouse} />
+          <ProjectsSection />
           <ExperienceSection />
           <EducationSection />
           <SkillsSection />

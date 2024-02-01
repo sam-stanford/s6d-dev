@@ -9,7 +9,6 @@ import mathworksLogo from "../../../assets/images/mathworks_logo_white_text.svg"
 import ecoeatsImage from "../../../assets/images/rider_booking_system_image.png";
 import SectionTitle from "../../../components/SectionHeader/SectionHeader";
 import { AnimationType } from "../../../components/ScrollAnimation/AnimationType";
-import { Mouse } from "../../../utils/Mouse";
 import stAndrewsLogo from "../../../assets/images/st_andrews_logo_rect.png";
 import Text from "antd/lib/typography/Text";
 
@@ -65,7 +64,7 @@ const mastersProjectContent = (
 );
 const mastersProjectTags = ["Kubernetes", "Python", "LaTeX"];
 
-export default function ProjectsSection(props: { mouse: Mouse }) {
+export default function ProjectsSection() {
   return (
     <>
       <Section backgroundColor={SectionBackgroundColor.grey}>
@@ -85,7 +84,6 @@ export default function ProjectsSection(props: { mouse: Mouse }) {
             title="Comparison Web Service"
             subtitle="MathWorks, 2021"
             tags={comparisonWebserviceTags}
-            mouse={props.mouse}
             animation={AnimationType.fade}
             textContent={comparisonWebserviceContent}
           />
@@ -99,7 +97,6 @@ export default function ProjectsSection(props: { mouse: Mouse }) {
             title="Rider Booking System"
             subtitle="Ecoeats, 2020"
             tags={riderBookingSystemTags}
-            mouse={props.mouse}
             animation={AnimationType.fade}
             textContent={riderBookingSystemContent}
           />
@@ -113,7 +110,6 @@ export default function ProjectsSection(props: { mouse: Mouse }) {
               alt: "Screenshot of an academic paper on spot instances",
             }}
             tags={mastersProjectTags}
-            mouse={props.mouse}
             animation={AnimationType.fade}
             textContent={mastersProjectContent}
             noMarginBottom
