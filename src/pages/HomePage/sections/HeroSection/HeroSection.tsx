@@ -53,7 +53,7 @@ export default function HeroSection() {
                 fontWeight: "lighter",
               }}
             >
-              Aspiring Software Developer
+              Aspiring Software Engineer
             </Title>
           </ScrollAnimation>
           <div className="hero-buttons" data-scroll-speed={"2"}>
