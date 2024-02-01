@@ -64,8 +64,8 @@ export default function AboutSection(props: { mouse: Mouse }) {
                   marginBottom: "1.4em",
                 }}
               >
-                I'm a final-year CS student, looking to use my skills to create
-                value for the world!
+                I'm a motivated software engineer with a passion for
+                problem-solving and all-things tech!
               </Title>
               <PillButton
                 href={"/Sam_Stanford_CV.pdf"} /* TODO */
