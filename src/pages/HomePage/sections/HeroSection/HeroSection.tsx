@@ -85,7 +85,7 @@ export default function HeroSection() {
               backgroundColor={UNSATURATED_LIGHT_ORANGE}
               outlineSize={FloatingButtonOutlineSize.large}
               animationDelay={FloatingButtonAnimationDelay.long}
-              link="mailto:sam@sjstanford.dev"
+              link="mailto:sam@s6d.dev"
               popAnimationDelay={1100}
             />
           </div>
