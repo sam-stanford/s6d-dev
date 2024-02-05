@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import HeroSection from "./sections/HeroSection/HeroSection";
 import EducationSection from "./sections/EducationSection";
@@ -8,12 +8,9 @@ import ExperienceSection from "./sections/ExperienceSection";
 import SkillsSection from "./sections/SkillsSection";
 import { debounce } from "lodash";
 import AboutSection from "./sections/AboutSection";
-import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import Aos from "aos";
 
 export default function Homepage() {
-  const [showPage, setShowPage] = useState(false);
-
   const [mouse, setMouse] = useState({
     position: { x: 0, y: 0 },
   });
@@ -37,32 +34,24 @@ export default function Homepage() {
     });
   }, []);
 
-  const showPageCallback = () => {
-    setShowPage(true);
+  useEffect(() => {
     setupAosAndBindToResize();
-  };
+  });
 
   return (
-    <>
-      <SplashScreen showContentCallback={showPageCallback} />
-      {showPage ? (
-        <div
-          data-scroll-container
-          data-scroll-section-inview
-          onMouseMove={debouncedUpdateMousePosition}
-          style={{ overflow: "hidden" }}
-        >
-          <HeroSection />
-          <AboutSection mouse={mouse} />
-          <ProjectsSection />
-          <ExperienceSection />
-          <EducationSection />
-          <SkillsSection />
-          <FooterSection />
-        </div>
-      ) : (
-        <></>
-      )}
-    </>
+    <div
+      data-scroll-container
+      data-scroll-section-inview
+      onMouseMove={debouncedUpdateMousePosition}
+      style={{ overflow: "hidden" }}
+    >
+      <HeroSection />
+      <AboutSection mouse={mouse} />
+      <ProjectsSection />
+      <ExperienceSection />
+      <EducationSection />
+      <SkillsSection />
+      <FooterSection />
+    </div>
   );
 }
