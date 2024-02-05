@@ -9,16 +9,16 @@ import mathworksLogo from "../../../assets/images/mathworks_logo_white_text.svg"
 import ecoeatsImage from "../../../assets/images/rider_booking_system_image.png";
 import SectionTitle from "../../../components/SectionHeader/SectionHeader";
 import { AnimationType } from "../../../components/ScrollAnimation/AnimationType";
-import stAndrewsLogo from "../../../assets/images/st_andrews_logo_rect.png";
 import Text from "antd/lib/typography/Text";
 
 import comparisonWebserviceImage from "../../../assets/images/comparison_web_service.png";
-import mastersProjectImage from "../../../assets/images/masters_project_image.png";
+import bloombergLogoFull from "../../../assets/images/bloomberg_logo_full.svg";
+import pypiFlaskScreenshot from "../../../assets/images/pypi-flask-screenshot.png";
 
 // TODO
 const MATHWORKS_BLUE = "#005594";
 const ECOEATS_GREEN = "#31B668";
-const ST_ANDREWS_RED = "#7F4274";
+const BLOOMBERG_ORANGE = "#444444";
 
 const TEXT_DIVIDER = <div style={{ width: "100%", height: "1em" }} />;
 
@@ -35,7 +35,7 @@ const comparisonWebserviceContent = (
     submission process when working with GitHub and GitLab.
   </Text>
 );
-const comparisonWebserviceTags = ["JavaScript", "Go", "C++"];
+const comparisonWebserviceTags = ["Go", "JavaScript", "C++"];
 
 const riderBookingSystemContent = (
   <Text style={{ color: "white" }}>
@@ -50,19 +50,21 @@ const riderBookingSystemContent = (
     time.
   </Text>
 );
-const riderBookingSystemTags = ["TypeScript", "SQL", "GraphQL"];
+const riderBookingSystemTags = ["TypeScript", "GraphQL", "React"];
 
-const mastersProjectContent = (
+const ingestionSystemContent = (
   <Text style={{ color: "white" }}>
-    &bull; <strong>Summary:</strong> Designing and developing a scheduler which
-    reduces cloud costs by running jobs on spot instances.
+    &bull; <strong>Problem:</strong> Ingesting malicious open-source software
+    from npm, PyPI, etc. posed a significant threat.
     {TEXT_DIVIDER}
-    &bull; <strong>Key Concepts:</strong> Scheduling, resource management,
-    queueing theory, fault-tolerance, software engineering, scientific
-    experimentation
+    &bull; <strong>Solution:</strong> Developing an interface to open-source
+    projects, applying heuristics to filter out malicious projects.
+    {TEXT_DIVIDER}
+    &bull; <strong>Outcome:</strong> 100% of retroactively discovered malicious
+    packages were blocked with zero manual intervention
   </Text>
 );
-const mastersProjectTags = ["Kubernetes", "Python", "LaTeX"];
+const ingestionSystemTags = ["Python", "SQL", "Kubernetes"];
 
 export default function ProjectsSection() {
   return (
@@ -73,6 +75,20 @@ export default function ProjectsSection() {
             firstLine="FEATURED"
             secondLine="PROJECTS"
             className="projects-section-header"
+          />
+          <ProjectCard
+            logo={{ src: bloombergLogoFull, alt: "Ecoeats logo" }}
+            backgroundColor={BLOOMBERG_ORANGE}
+            title="OSS Ingestion Relay"
+            subtitle="Bloomberg 2023"
+            foregroundImage={{
+              src: pypiFlaskScreenshot,
+              alt: "Screenshot of an academic paper on spot instances",
+            }}
+            tags={ingestionSystemTags}
+            animation={AnimationType.fade}
+            textContent={ingestionSystemContent}
+            noMarginBottom
           />
           <ProjectCard
             logo={{ src: mathworksLogo, alt: "MathWorks logo" }}
@@ -99,20 +115,6 @@ export default function ProjectsSection() {
             tags={riderBookingSystemTags}
             animation={AnimationType.fade}
             textContent={riderBookingSystemContent}
-          />
-          <ProjectCard
-            logo={{ src: stAndrewsLogo, alt: "Ecoeats logo" }}
-            backgroundColor={ST_ANDREWS_RED}
-            title="Spot Instance Scheduler"
-            subtitle="University of St Andrews, 2021"
-            foregroundImage={{
-              src: mastersProjectImage,
-              alt: "Screenshot of an academic paper on spot instances",
-            }}
-            tags={mastersProjectTags}
-            animation={AnimationType.fade}
-            textContent={mastersProjectContent}
-            noMarginBottom
           />
         </Content>
       </Section>
