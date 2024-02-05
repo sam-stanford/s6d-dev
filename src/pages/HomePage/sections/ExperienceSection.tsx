@@ -35,9 +35,9 @@ export default function ExperienceSection() {
   const [mathworksHovered, setMathworksHovered] = useState(false);
   const [mathworksHighlighted, setMathworksHighlighted] = useState(false);
 
-  const [bloombergFocused, setBloombergFocused] = useState(true);
+  const [bloombergFocused, setBloombergFocused] = useState(false);
   const [bloombergHovered, setBloombergHovered] = useState(false);
-  const [bloombergHighlighted, setBloombergHighlighted] = useState(true);
+  const [bloombergHighlighted, setBloombergHighlighted] = useState(false);
 
   useEffect(() => {
     setEcoeatsHighlighted(ecoeatsFocused || ecoeatsHovered);
@@ -54,6 +54,10 @@ export default function ExperienceSection() {
   useEffect(() => {
     setBloombergHighlighted(bloombergFocused || bloombergHovered);
   }, [bloombergFocused, bloombergHovered]);
+
+  useEffect(() => {
+    setBloombergFocused(true);
+  }, []);
 
   const ecoeatsCard = (
     <ScrollAnimation animation={AnimationType.fadeRight}>
