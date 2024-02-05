@@ -86,7 +86,7 @@ export default function ProjectsSection() {
               alt: "Screenshot of an academic paper on spot instances",
             }}
             tags={ingestionSystemTags}
-            animation={AnimationType.fade}
+            animation={AnimationType.fadeRight}
             textContent={ingestionSystemContent}
             noMarginBottom
           />
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
             title="Comparison Web Service"
             subtitle="MathWorks, 2021"
             tags={comparisonWebserviceTags}
-            animation={AnimationType.fade}
+            animation={AnimationType.fadeRight}
             textContent={comparisonWebserviceContent}
           />
           <ProjectCard
@@ -113,7 +113,7 @@ export default function ProjectsSection() {
             title="Rider Booking System"
             subtitle="Ecoeats, 2020"
             tags={riderBookingSystemTags}
-            animation={AnimationType.fade}
+            animation={AnimationType.fadeRight}
             textContent={riderBookingSystemContent}
           />
         </Content>
