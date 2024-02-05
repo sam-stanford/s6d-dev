@@ -35,9 +35,9 @@ export default function ExperienceSection() {
   const [mathworksHovered, setMathworksHovered] = useState(false);
   const [mathworksHighlighted, setMathworksHighlighted] = useState(false);
 
-  const [bloombergFocused, setBloombergFocused] = useState(false);
+  const [bloombergFocused, setBloombergFocused] = useState(true);
   const [bloombergHovered, setBloombergHovered] = useState(false);
-  const [bloombergHighlighted, setBloombergHighlighted] = useState(false);
+  const [bloombergHighlighted, setBloombergHighlighted] = useState(true);
 
   useEffect(() => {
     setEcoeatsHighlighted(ecoeatsFocused || ecoeatsHovered);
