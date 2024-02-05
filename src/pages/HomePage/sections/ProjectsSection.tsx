@@ -61,7 +61,7 @@ const ingestionSystemContent = (
     projects, applying heuristics to filter out malicious projects.
     {TEXT_DIVIDER}
     &bull; <strong>Outcome:</strong> 100% of retroactively discovered malicious
-    packages were blocked with zero manual intervention
+    packages were blocked with zero manual intervention.
   </Text>
 );
 const ingestionSystemTags = ["Python", "SQL", "Kubernetes"];
