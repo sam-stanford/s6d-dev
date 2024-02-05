@@ -24,14 +24,14 @@
   }
 
   @media (min-width: $breakpoint-lg) {
-    filter: saturate(0.6);
+    filter: opacity(0.7) saturate(0.3);
   }
 
   &__pulse {
     animation: pulse 2s ease infinite;
   }
   &__dot {
-    transition: 0.2s ease-in-out;
+    transition: 0.15s ease-in-out;
     transform: scale(1);
   }
 

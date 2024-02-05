@@ -18,7 +18,7 @@ import { AnimationType } from "../../../components/ScrollAnimation/AnimationType
 const MATHWORKS_BLUE = "#005594";
 const ECOEATS_GREEN = "#31B668";
 const BLUESTONE_RED = "#CF0000";
-const BLOOMBERG_ORANGE = "#FF9933";
+const BLOOMBERG_ORANGE = "#ffa93b";
 
 const UNFOCUSED_SATURATION = 0.3;
 

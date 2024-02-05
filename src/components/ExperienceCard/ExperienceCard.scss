@@ -2,7 +2,7 @@
 @import "../../utils/Colors.scss";
 
 .experience-card {
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
@@ -15,7 +15,7 @@
   &__icon {
     width: 100%;
     height: auto;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
     @media (min-width: $breakpoint-sm) {
       width: 80%;
     }
