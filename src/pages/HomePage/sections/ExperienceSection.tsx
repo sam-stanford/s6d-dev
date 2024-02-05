@@ -115,7 +115,7 @@ export default function ExperienceSection() {
         subtitle="July 2019 - Sept 2019"
         isHighlighted={bluestoneHighlighted}
         onFocus={() => {
-          setFocusedExperience(Experience.ECOEATS);
+          setFocusedExperience(Experience.BLUESTONE);
         }}
         onMouseEnter={() => {
           setBluestoneHovered(true);
