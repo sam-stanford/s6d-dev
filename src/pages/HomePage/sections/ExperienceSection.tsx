@@ -22,42 +22,53 @@ const BLOOMBERG_ORANGE = "#ffa93b";
 
 const UNFOCUSED_SATURATION = 0.3;
 
+enum Experience {
+  BLOOMBERG,
+  MATHWORKS,
+  ECOEATS,
+  BLUESTONE,
+}
+
 export default function ExperienceSection() {
-  const [ecoeatsFocused, setEcoeatsFocused] = useState(false);
+  const [focusedExperience, setFocusedExperience] = useState<Experience>(
+    Experience.BLOOMBERG
+  );
+
   const [ecoeatsHovered, setEcoeatsHovered] = useState(false);
   const [ecoeatsHighlighted, setEcoeatsHighlighted] = useState(false);
 
-  const [bluestoneFocused, setBluestoneFocused] = useState(false);
   const [bluestoneHovered, setBluestoneHovered] = useState(false);
   const [bluestoneHighlighted, setBluestoneHighlighted] = useState(false);
 
-  const [mathworksFocused, setMathworksFocused] = useState(false);
   const [mathworksHovered, setMathworksHovered] = useState(false);
   const [mathworksHighlighted, setMathworksHighlighted] = useState(false);
 
-  const [bloombergFocused, setBloombergFocused] = useState(false);
   const [bloombergHovered, setBloombergHovered] = useState(false);
   const [bloombergHighlighted, setBloombergHighlighted] = useState(false);
 
   useEffect(() => {
-    setEcoeatsHighlighted(ecoeatsFocused || ecoeatsHovered);
-  }, [ecoeatsFocused, ecoeatsHovered]);
+    setEcoeatsHighlighted(
+      focusedExperience === Experience.ECOEATS || ecoeatsHovered
+    );
+  }, [focusedExperience, ecoeatsHovered]);
 
   useEffect(() => {
-    setBluestoneHighlighted(bluestoneFocused || bluestoneHovered);
-  }, [bluestoneFocused, bluestoneHovered]);
+    setBluestoneHighlighted(
+      focusedExperience === Experience.BLUESTONE || bluestoneHovered
+    );
+  }, [focusedExperience, bluestoneHovered]);
 
   useEffect(() => {
-    setMathworksHighlighted(mathworksFocused || mathworksHovered);
-  }, [mathworksFocused, mathworksHovered]);
+    setMathworksHighlighted(
+      focusedExperience === Experience.MATHWORKS || mathworksHovered
+    );
+  }, [focusedExperience, mathworksHovered]);
 
   useEffect(() => {
-    setBloombergHighlighted(bloombergFocused || bloombergHovered);
-  }, [bloombergFocused, bloombergHovered]);
-
-  useEffect(() => {
-    setBloombergFocused(true);
-  }, []);
+    setBloombergHighlighted(
+      focusedExperience === Experience.BLOOMBERG || bloombergHovered
+    );
+  }, [focusedExperience, bloombergHovered]);
 
   const ecoeatsCard = (
     <ScrollAnimation animation={AnimationType.fadeRight}>
@@ -69,10 +80,7 @@ export default function ExperienceSection() {
         isHighlighted={ecoeatsHighlighted}
         className="ecoeats-experience-card"
         onFocus={() => {
-          setEcoeatsFocused(true);
-        }}
-        onBlur={() => {
-          setEcoeatsFocused(false);
+          setFocusedExperience(Experience.ECOEATS);
         }}
         onMouseEnter={() => {
           setEcoeatsHovered(true);
@@ -107,10 +115,7 @@ export default function ExperienceSection() {
         subtitle="July 2019 - Sept 2019"
         isHighlighted={bluestoneHighlighted}
         onFocus={() => {
-          setBluestoneFocused(true);
-        }}
-        onBlur={() => {
-          setBluestoneFocused(false);
+          setFocusedExperience(Experience.ECOEATS);
         }}
         onMouseEnter={() => {
           setBluestoneHovered(true);
@@ -145,10 +150,7 @@ export default function ExperienceSection() {
         subtitle="May 2021 - Sept 2021"
         isHighlighted={mathworksHighlighted}
         onFocus={() => {
-          setMathworksFocused(true);
-        }}
-        onBlur={() => {
-          setMathworksFocused(false);
+          setFocusedExperience(Experience.MATHWORKS);
         }}
         onMouseEnter={() => {
           setMathworksHovered(true);
@@ -182,10 +184,7 @@ export default function ExperienceSection() {
         subtitle="May 2021 - Sept 2021"
         isHighlighted={bloombergHighlighted}
         onFocus={() => {
-          setBloombergFocused(true);
-        }}
-        onBlur={() => {
-          setBloombergFocused(false);
+          setFocusedExperience(Experience.BLOOMBERG);
         }}
         onMouseEnter={() => {
           setBloombergHovered(true);
@@ -232,10 +231,7 @@ export default function ExperienceSection() {
           saturation={ecoeatsHighlighted ? 1 : UNFOCUSED_SATURATION}
           isHighlighted={ecoeatsHighlighted}
           onFocus={() => {
-            setEcoeatsFocused(true);
-          }}
-          onBlur={() => {
-            setEcoeatsFocused(false);
+            setFocusedExperience(Experience.ECOEATS);
           }}
           onMouseEnter={() => {
             setEcoeatsHovered(true);
@@ -251,10 +247,7 @@ export default function ExperienceSection() {
           saturation={bluestoneHighlighted ? 1 : UNFOCUSED_SATURATION}
           isHighlighted={bluestoneHighlighted}
           onFocus={() => {
-            setBluestoneFocused(true);
-          }}
-          onBlur={() => {
-            setBluestoneFocused(false);
+            setFocusedExperience(Experience.BLUESTONE);
           }}
           onMouseEnter={() => {
             setBluestoneHovered(true);
@@ -270,10 +263,7 @@ export default function ExperienceSection() {
           saturation={mathworksHighlighted ? 1 : UNFOCUSED_SATURATION}
           isHighlighted={mathworksHighlighted}
           onFocus={() => {
-            setMathworksFocused(true);
-          }}
-          onBlur={() => {
-            setMathworksFocused(false);
+            setFocusedExperience(Experience.MATHWORKS);
           }}
           onMouseEnter={() => {
             setMathworksHovered(true);
@@ -289,10 +279,7 @@ export default function ExperienceSection() {
           saturation={bloombergHighlighted ? 1 : UNFOCUSED_SATURATION}
           isHighlighted={bloombergHighlighted}
           onFocus={() => {
-            setBloombergFocused(true);
-          }}
-          onBlur={() => {
-            setBloombergFocused(false);
+            setFocusedExperience(Experience.BLOOMBERG);
           }}
           onMouseEnter={() => {
             setBloombergHighlighted(true);
